@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -120,6 +121,8 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -939,7 +942,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\" />
+    <Folder Include="App\Customer\" />
+    <Folder Include="App\Employee\" />
+    <Folder Include="App\Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="Rules\" />
   </ItemGroup>
