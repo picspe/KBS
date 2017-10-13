@@ -8,7 +8,7 @@ namespace WebShopKBS.Models.UserModels
 {
 	public enum UserType {Customer, Manager, Employee}
 
-    public abstract class User
+    public class User
     {
 	    [Key]
 		public string Username { get; set; }

@@ -7,7 +7,11 @@ namespace WebShopKBS.Models.UserModels
 {
     public class Employee:User
     {
-	    public Employee(User u) : base(u.Username, u.Password, u.FirstName, u.LastName, UserType.Employee)
+	    public Employee()
+	    {
+		    Type = UserType.Employee;
+	    }
+		public Employee(User u) : base(u.Username, u.Password, u.FirstName, u.LastName, UserType.Employee)
 		{
 	    }
     }

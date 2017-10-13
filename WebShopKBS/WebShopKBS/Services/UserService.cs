@@ -56,16 +56,24 @@ namespace WebShopKBS.Services
 
 		public User Login(User user)
 		{
-			switch (user.Type)
+			try
 			{
-				case UserType.Customer:
-					return customers.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
-				case UserType.Employee:
-					return employees.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
-				case UserType.Manager:
-					return managers.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
+				switch (user.Type)
+				{
+					case UserType.Customer:
+						return customers.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
+					case UserType.Employee:
+						return employees.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
+					//Kada se zaposleni uloguje treba da se upale sva pravila za porucivanje, i nakon svake porudzbine se provere opet
+					case UserType.Manager:
+						return managers.Get().Single(u => u.Username == user.Username && u.Password == user.Password);
+				}
+				return null;
 			}
-			return null;
+			catch (Exception)
+			{
+				return null;
+			}
 		}
 	}
 }

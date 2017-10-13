@@ -21,5 +21,14 @@ namespace WebShopKBS.Models
 	    public virtual DbSet<Item> Items  { get; set; }
 	    public virtual DbSet<ItemCategory> ItemCategories  { get; set; }
 	    public virtual DbSet<Sale> Sales { get; set; }
+
+	    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+	    {
+		    //one-to-many 
+		    modelBuilder.Entity<Order>()
+			    .HasRequired<Customer>(l => l.Customer)
+			    .WithMany(b => b.History)
+			    .HasForeignKey(l => l.Customer);
+	    }
 	}
 }
