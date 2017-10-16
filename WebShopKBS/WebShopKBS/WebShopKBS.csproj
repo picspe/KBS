@@ -88,6 +88,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\Controllers\CustomerController.js" />
+    <Content Include="App\Controllers\EmployeeController.js" />
+    <Content Include="App\Controllers\ManagerController.js" />
+    <Content Include="App\Controllers\UserController.js" />
+    <Content Include="App\Services\CustomerCategoryService.js" />
+    <Content Include="App\Services\CustomerService.js" />
+    <Content Include="App\Services\EmployeeService.js" />
+    <Content Include="App\Services\ItemCategoryService.js" />
+    <Content Include="App\Services\ItemService.js" />
+    <Content Include="App\Services\SaleService.js" />
+    <Content Include="App\Services\UserService.js" />
+    <Content Include="App\Templates\index.html" />
+    <Content Include="App\Templates\login.html" />
+    <Content Include="App\Templates\register.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -944,9 +958,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Customer\" />
-    <Folder Include="App\Employee\" />
-    <Folder Include="App\Manager\" />
     <Folder Include="App_Data\" />
     <Folder Include="Rules\" />
   </ItemGroup>

@@ -25,7 +25,7 @@ namespace WebShopKBS.Controllers
 
 		[Route("isUserLoggedIn")]
 		[HttpPost]
-		public IHttpActionResult loggedIn([FromBody] User user)
+		public IHttpActionResult LoggedIn([FromBody] User user)
 		{
 			var activeUser = (User) HttpContext.Current.Session["user"];
 			if(activeUser != null && IsUserLoggedIn(activeUser, user))
