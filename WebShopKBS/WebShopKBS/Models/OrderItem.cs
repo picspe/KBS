@@ -9,13 +9,13 @@ namespace WebShopKBS.Models
     {
 	    public Order Order { get; set; }
 	    public int Index { get; set; }
-	    public Item Item { get; set; }
+	    public virtual Item Item { get; set; }
 	    public int Price { get; set; }
 	    public int Count { get; set; }
 	    public int TotalPrice { get; set; }
 	    public int TotalDiscount { get; set; }
 	    public int PriceAfterDiscount { get; set; }
-	    public List<ItemDiscount> Discounts { get; set; }
+	    public virtual List<ItemDiscount> Discounts { get; set; }
 
 	    public OrderItem()
 	    {

@@ -1,4 +1,8 @@
-﻿angular.module('webShopApp', ['ui.router'])
+﻿angular.module('webShopApp', ['ui.router',
+	'customer.services', 'customer.controllers',
+	'employee.services', 'employee.controllers',
+	'manager.services', 'managerItem.services', 'managerItemCategory.services', 'manager.controllers',
+	'user.services', 'user.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
@@ -25,6 +29,24 @@
 		.state('customer',
 		{
 			url: '/customer',
+			templateUrl: 'app/Templates/customer.html',
+			controller: 'customerController'
+		})
+		.state('customer.profile',
+		{
+			url: '/customer/profile',
+			templateUrl: 'app/Templates/index.html',
+			controller: 'customerController'
+		})
+		.state('customer.shop',
+		{
+			url: '/customer/shop',
+			templateUrl: 'app/Templates/index.html',
+			controller: 'customerController'
+		})
+		.state('customer.cart',
+		{
+			url: '/customer/cart',
 			templateUrl: 'app/Templates/index.html',
 			controller: 'customerController'
 		})

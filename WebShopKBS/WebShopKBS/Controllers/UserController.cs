@@ -24,18 +24,13 @@ namespace WebShopKBS.Controllers
 		}
 
 		[Route("isUserLoggedIn")]
-		[HttpPost]
-		public IHttpActionResult LoggedIn([FromBody] User user)
+		[HttpGet]
+		public IHttpActionResult LoggedIn()
 		{
 			var activeUser = (User) HttpContext.Current.Session["user"];
-			if(activeUser != null && IsUserLoggedIn(activeUser, user))
+			if(activeUser != null)
 				return Ok(activeUser);
 			return NotFound();
-		}
-
-		private bool IsUserLoggedIn(User activeUser, User user)
-		{
-			return activeUser.Username.Equals(user.Username) && activeUser.Password.Equals(user.Password);
 		}
 
 		[Route("login")]

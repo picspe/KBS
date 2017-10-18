@@ -1,4 +1,4 @@
-﻿angular.module('manager.services', [])
+﻿angular.module('managerItem.services', [])
 .service('itemService',
 ['$http', function ($http) {
 	this.getItem = function () {

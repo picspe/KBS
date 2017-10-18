@@ -38,7 +38,9 @@ namespace WebShopKBS.Services
 
 		public Sale CreateSale(Sale sale)
 		{
-			return sales.Insert(sale);
+			if(!GetSales().Any(s => s.Name.Equals(sale.Name)))
+				return sales.Insert(sale);
+			return null;
 		}
 
 		public Sale UpdateSale(Sale sale)
@@ -59,7 +61,9 @@ namespace WebShopKBS.Services
 
 		public Item AddItem(Item item)
 		{
-			return items.Insert(item);
+			if(!GetItems().Any(i => i.Name.Equals(item.Name)))
+				return items.Insert(item);
+			return null;
 		}
 
 		public Item UpdateItem(Item item)
@@ -80,7 +84,9 @@ namespace WebShopKBS.Services
 
 		public ItemCategory CreateItemCategory(ItemCategory category)
 		{
-			return itemCategories.Insert(category);
+			if (!GetiItemCategories().Any(i => i.Name.Equals(category.Name)))
+				return itemCategories.Insert(category);
+			return null;
 		}
 
 		public ItemCategory UpdateItemCategory(ItemCategory itemCategory)
@@ -102,7 +108,9 @@ namespace WebShopKBS.Services
 
 		public CustomerCategory CreateCustomerCategory(CustomerCategory category)
 		{
-			return customerCategories.Insert(category);
+			if (!GetiItemCategories().Any(i => i.Name.Equals(category.Name)))
+				return customerCategories.Insert(category);
+			return null;
 		}
 
 		public CustomerCategory UpdatecCustomerCategory(CustomerCategory category)

@@ -106,3 +106,28 @@ input,button,select {
 hr {
 	border: 0;
 }
+
+
+.thumbnail {
+	text-align: center;
+	height: 120px;
+	width: 120px;
+	display: block;
+	max-width: 100%;
+	padding: 0;
+	line-height: 1.428571429;
+	background-color: #ffffff;
+	border-radius: 1px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+}
+
+.thumbnail:hover {
+	color: #ffffff;
+	background-color: #dddddd;
+	border: 0;
+}

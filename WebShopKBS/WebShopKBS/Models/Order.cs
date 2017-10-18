@@ -13,13 +13,13 @@ namespace WebShopKBS.Models
 	    [Key]
 		public int Id { get; set; }
 	    public DateTime DateTime { get; set; }
-	    public Customer Customer { get; set; }
+	    public virtual Customer Customer { get; set; }
 	    public int Bill { get; set; }
 	    public int TotalDiscount { get; set; }
 	    public int BillAfterDiscount { get; set; }
 	    public int BonusCreditSpent { get; set; }
-	    public List<OrderDiscount> Discounts { get; set; }
-	    public List<Item> Items { get; set; }
+	    public virtual List<OrderDiscount> Discounts { get; set; }
+	    public virtual List<Item> Items { get; set; }
 
 	    public Order()
 	    {

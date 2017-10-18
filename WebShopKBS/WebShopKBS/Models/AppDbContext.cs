@@ -24,11 +24,15 @@ namespace WebShopKBS.Models
 
 	    protected override void OnModelCreating(DbModelBuilder modelBuilder)
 	    {
-		    //one-to-many 
-		    modelBuilder.Entity<Order>()
+		    //one-to-many  
+		   /* modelBuilder.Entity<Order>()
 			    .HasRequired<Customer>(l => l.Customer)
 			    .WithMany(b => b.History)
-			    .HasForeignKey(l => l.Customer);
+			    .HasForeignKey(l => l.Customer);*/
+
+			modelBuilder.Entity<ItemCategory>()
+				.HasOptional<ItemCategory>(l => l.Category);
+			
 	    }
 	}
 }

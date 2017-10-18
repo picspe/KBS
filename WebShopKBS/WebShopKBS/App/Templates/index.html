@@ -11,14 +11,8 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <span class="caret"></span></a>
-						<ul class="dropdown-menu forAnimate">
-							<li><a href="#">Subcategory</a></li>
-						</ul>
-					</li>          
-					<li ><a href="#">Libros</a></li>        
-					<li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs glyphicon glyphicon-tags"></span></a></li>
+					<li><a href="#"> Categories <span style="font-size:16px;" class="pull-right hidden-xs glyphicon glyphicon-tags"></span></a></li>
+					<li ng-repeat="category in itemCategories" ng-if="category.category === null"><a>{{category.name}}</a> </li>
 				</ul>
 			</div>
 		</div>

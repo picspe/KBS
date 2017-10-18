@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div align="center">
+	<div class="panel">
+		<form name="registerForm">
+			<hr />
+			<label>Username</label>
+			<input type="text" required class="form-control" ng-model="user.username" />
+			<label>Password</label>
+			<input type="password" required class="form-control" ng-model="user.password" />
+			<label>FirstName</label>
+			<input type="text" required class="form-control" ng-model="user.firstName" />
+			<label>LastName</label>
+			<input type="text" required class="form-control" ng-model="user.lastName" />
+			<hr />
+			<button type="submit" class="btn-lg btn-primary " ng-click="register(user)">Register</button>
+			<hr />
+		</form>
+	</div>
+</div>
