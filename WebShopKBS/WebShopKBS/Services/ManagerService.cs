@@ -31,6 +31,11 @@ namespace WebShopKBS.Services
 		#region MANAGER CRUD ACTIONS
 
 		//Sales
+		public Sale GetSale(int id)
+		{
+			return sales.Get().Single(s => s.Id == id);
+		}
+
 		public IEnumerable<Sale> GetSales()
 		{
 			return sales.Get().ToList();
@@ -54,6 +59,11 @@ namespace WebShopKBS.Services
 		}
 
 		//Items
+		public Item GetItem(int id)
+		{
+			return items.Get().Single(s => s.Id == id);
+		}
+
 		public IEnumerable<Item> GetItems()
 		{
 			return items.Get().ToList();

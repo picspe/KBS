@@ -1,7 +1,11 @@
 ﻿angular.module('managerItem.services', [])
 .service('itemService',
 ['$http', function ($http) {
-	this.getItem = function () {
+	this.getItem = function (id) {
+		return $http.get('/item/'+id);
+	}
+
+	this.getItems = function () {
 		return $http.get('/item');
 	}
 

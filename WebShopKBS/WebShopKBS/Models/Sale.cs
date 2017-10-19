@@ -15,7 +15,8 @@ namespace WebShopKBS.Models
 	    public DateTime StartsAt { get; set; }
 	    public DateTime EndsAt { get; set; }
 	    public int Discount { get; set; }
-	    public List<ItemCategory> Categories { get; set; }
+
+	    public virtual List<ItemCategory> Categories { get; set; }
 
 	    public Sale()
 	    {

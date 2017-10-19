@@ -138,7 +138,5 @@ C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.c
 C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.csproj.CoreCompileInputs.cache
 C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.dll
 C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.pdb
-C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.Migrations.one.resources
+C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.Migrations.zero.resources
 C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.csproj.GenerateResource.Cache
-C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.Migrations.two.resources
-C:\Users\srdjan.pepic\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.Migrations.three.resources

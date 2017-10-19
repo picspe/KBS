@@ -12,12 +12,15 @@ namespace WebShopKBS.Models
 		[Key]
 		public int Id { get; set; }
 		public string Name { get; set; }
+		public int? ParentCategoryId { get; set; }
 		public int MaxDiscount { get; set; }
-		public virtual ItemCategory Category { get; set; }
 
-		public override bool Equals(object obj)
+		public virtual ItemCategory ParentCategory { get; set; }
+		public virtual ICollection<ItemCategory> ChildCategories{ get; set; }
+
+		public ItemCategory()
 		{
-			return this.Name.Equals((obj as ItemCategory).Name);
+			
 		}
 	}
 }

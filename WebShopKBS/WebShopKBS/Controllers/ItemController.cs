@@ -19,6 +19,12 @@ namespace WebShopKBS.Controllers
 		    service = new ManagerService(new UnitOfWork());
 	    }
 
+	    public Item Get(int id)
+	    {
+		    return service.GetItem(id);
+	    }
+
+
 	    // GET: api/CustomerCategory
 	    public IEnumerable<Item> Get()
 	    {

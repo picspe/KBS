@@ -1,7 +1,7 @@
 ﻿angular.module('user.controllers', [])
 .controller('userController',
-['$scope', '$rootScope', '$window', '$state', 'userService', 'saleService', 'itemService','itemCategoryService',
-function ($scope, $rootScope, $window, $state, userService, saleService, itemService, itemCategoryService) {
+['$scope', '$rootScope', '$window', '$state', 'userService', 'saleService', 'itemService','itemCategoryService', '$compile',
+function ($scope, $rootScope, $window, $state, userService, saleService, itemService, itemCategoryService, $compile) {
 	$scope.login = function (user) {
 		userService.login(user).then(function (response) {
 			$rootScope.user = response.data;
@@ -44,6 +44,29 @@ function ($scope, $rootScope, $window, $state, userService, saleService, itemSer
 			$state.go('login');
 		});
 	}
+
+	$scope.getSubcategories = function (category, event) {
+		if ($(event.target).hasClass("open")) {
+			category.subcategorieshtml = "";
+			$(event.target).removeClass("open");
+			return;
+		}
+		console.log(event);
+		console.log(category);
+		category.subcategorieshtml = "<ul class='nav navbar-nav'>";
+		for (var i = 0; i < category.childCategories.length; i++) {
+			category.subcategorieshtml += "<li><a>" + category.childCategories[i].name;
+			if (category.childCategories[i].childCategories.length > 0)
+				category.subcategorieshtml += "<span ng-click='getSubcategories(category.childCategories[" + i + "], $event)'" +
+					" style='font-size: 16px;' class='pull-right hidden-xs glyphicon glyphicon-plus-sign'></span>";
+			category.subcategorieshtml += "</a></li>";
+			category.subcategorieshtml += "<div compile='category.childCategories[" + i + "].subcategorieshtml'></div>";
+		}
+		category.subcategorieshtml += "</ul>";
+		$(event.target).addClass("open");
+		
+	}
+
 
 	var getContent = function() {
 		userService.isUserLoggedIn().then(function(response) {

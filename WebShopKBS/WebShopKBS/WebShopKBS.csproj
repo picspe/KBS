@@ -100,8 +100,16 @@
     <Content Include="App\Services\SaleService.js" />
     <Content Include="App\Services\UserService.js" />
     <Content Include="App\Templates\customer.html" />
+    <Content Include="App\Templates\employee.html" />
+    <Content Include="App\Templates\Employee\order.html" />
+    <Content Include="App\Templates\Employee\restock.html" />
     <Content Include="App\Templates\index.html" />
     <Content Include="App\Templates\login.html" />
+    <Content Include="App\Templates\manager.html" />
+    <Content Include="App\Templates\Manager\customerCategories.html" />
+    <Content Include="App\Templates\Manager\itemCategories.html" />
+    <Content Include="App\Templates\Manager\items.html" />
+    <Content Include="App\Templates\Manager\sales.html" />
     <Content Include="App\Templates\register.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -111,6 +119,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -141,17 +150,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710171242027_one.cs" />
-    <Compile Include="Migrations\201710171242027_one.Designer.cs">
-      <DependentUpon>201710171242027_one.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710171247282_two.cs" />
-    <Compile Include="Migrations\201710171247282_two.Designer.cs">
-      <DependentUpon>201710171247282_two.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710171253570_three.cs" />
-    <Compile Include="Migrations\201710171253570_three.Designer.cs">
-      <DependentUpon>201710171253570_three.cs</DependentUpon>
+    <Compile Include="Migrations\201710191415259_zero.cs" />
+    <Compile Include="Migrations\201710191415259_zero.Designer.cs">
+      <DependentUpon>201710191415259_zero.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -193,14 +194,8 @@
     <Folder Include="Rules\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710171242027_one.resx">
-      <DependentUpon>201710171242027_one.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710171247282_two.resx">
-      <DependentUpon>201710171247282_two.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710171253570_three.resx">
-      <DependentUpon>201710171253570_three.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710191415259_zero.resx">
+      <DependentUpon>201710191415259_zero.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
