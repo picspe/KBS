@@ -1,10 +1,40 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div align="center">
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Starts</th>
+				<th>Ends</th>
+				<th>Discount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="sale in sales">
+				<td>{{sale.id}}</td>
+				<td>{{sale.name}}</td>
+				<td>{{sale.startsAt}}</td>
+				<td>{{sale.endsAt}}</td>
+				<td>{{sale.discount}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="panel panel-default">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 align="center">Add Category</h3>
+				<form>
+					<label>Name</label>
+					<input class="form-control" type="text" ng-model="newSale.name" />
+					<label>Start date</label>
+					<input class="form-control" type="datetime" ng-model="newSale.startsAt" />
+					<label>End date</label>
+					<input class="form-control" type="datetime" ng-model="newSale.endsAt" />
+					<label>Discount</label>
+					<input class="form-control" type="text" ng-model="newSale.discount" />
+					<button type="submit" class="btn btn-default" ng-click="addSale(newSale)"> Add </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

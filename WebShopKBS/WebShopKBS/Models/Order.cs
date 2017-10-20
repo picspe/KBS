@@ -19,6 +19,7 @@ namespace WebShopKBS.Models
 	    public int TotalDiscount { get; set; }
 	    public int BillAfterDiscount { get; set; }
 	    public int BonusCreditSpent { get; set; }
+	    public OrderStatus OrderStatus { get; set; }
 
 		[ForeignKey("CustomerId")]
 	    public virtual Customer Customer { get; set; }
@@ -27,6 +28,7 @@ namespace WebShopKBS.Models
 
 	    public Order()
 	    {
+			OrderStatus = OrderStatus.Ordered;
 			Discounts = new List<OrderDiscount>();
 		    Items = new List<OrderItem>();
 	    }

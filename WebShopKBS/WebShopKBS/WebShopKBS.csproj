@@ -100,6 +100,9 @@
     <Content Include="App\Services\SaleService.js" />
     <Content Include="App\Services\UserService.js" />
     <Content Include="App\Templates\customer.html" />
+    <Content Include="App\Templates\Customer\confirmOrder.html" />
+    <Content Include="App\Templates\Customer\index.html" />
+    <Content Include="App\Templates\Customer\order.html" />
     <Content Include="App\Templates\employee.html" />
     <Content Include="App\Templates\Employee\order.html" />
     <Content Include="App\Templates\Employee\restock.html" />
@@ -150,11 +153,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710191415259_zero.cs" />
-    <Compile Include="Migrations\201710191415259_zero.Designer.cs">
-      <DependentUpon>201710191415259_zero.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Discount.cs" />
     <Compile Include="Models\Item.cs" />
@@ -192,11 +190,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Rules\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710191415259_zero.resx">
-      <DependentUpon>201710191415259_zero.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

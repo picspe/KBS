@@ -14,6 +14,8 @@ namespace WebShopKBS.Models.UserModels
 		public int MinCapValue { get; set; }
 		public int MaxCapValue { get; set; }
 
+		public virtual ICollection<Customer> Customers { get; set; }
+
 		public float GetBonusTokens()
 		{
 			return 0;

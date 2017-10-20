@@ -1,7 +1,7 @@
 ﻿angular.module('webShopApp', ['ui.router', 'ngSanitize',
 	'customer.services', 'customer.controllers',
 	'employee.services', 'employee.controllers',
-	'manager.services', 'managerItem.services', 'managerItemCategory.services', 'manager.controllers',
+	'manager.services', 'managerItem.services', 'managerItemCategory.services', 'customerCategory.services', 'manager.controllers', 
 	'user.services', 'user.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -76,26 +76,26 @@
 		})
 		.state('manager.itemCategories',
 			{
-				url: '/manager/itemCategories',
+				url: '/itemCategories',
 				templateUrl: 'app/Templates/Manager/itemCategories.html',
 				controller: 'managerController'
 		})
 		.state('manager.customerCategories',
 			{
-				url: '/manager/customerCategories',
+				url: '/customerCategories',
 				templateUrl: 'app/Templates/Manager/customerCategories.html',
 				controller: 'managerController'
 		})
 		.state('manager.items',
 			{
-				url: '/manager/items',
+				url: '/items',
 				templateUrl: 'app/Templates/Manager/items.html',
 				controller: 'managerController'
 		})
 		.state('manager.sales',
 			{
-				url: '/manager/sales',
-				templateUrl: 'app/Template/Managers/sales.html',
+				url: '/sales',
+				templateUrl: 'app/Templates/Manager/sales.html',
 				controller: 'managerController'
 		})
 		;

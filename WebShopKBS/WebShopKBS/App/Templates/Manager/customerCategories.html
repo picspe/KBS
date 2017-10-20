@@ -1,10 +1,36 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div align="center">
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Min Value</th>
+			<th>Max Value</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="category in customerCategories">
+			<td>{{category.id}}</td>
+			<td>{{category.name}}</td>
+			<td>{{category.minCapValue}}</td>
+			<td>{{category.maxCapValue}}</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="panel panel-default">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 align="center">Add Category</h3>
+				<form>
+					<label>Name</label>
+					<input class="form-control" type="text" ng-model="newCategory.name"/>
+					<label>Minimum Value</label>
+					<input class="form-control" type="text" ng-model="newCategory.minCapValue" />
+					<label>Maximum Value</label>
+					<input class="form-control" type="text" ng-model="newCategory.maxCapValue" />
+					<button type="submit" class="btn btn-default" ng-click="addCustomerCategory(newCategory)"> Add </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

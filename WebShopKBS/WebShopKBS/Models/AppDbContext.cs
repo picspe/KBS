@@ -46,6 +46,11 @@ namespace WebShopKBS.Models
 			    .HasMany(s => s.Discounts)
 			    .WithRequired(d => d.Item)
 			    .HasForeignKey(d => d.ItemId).WillCascadeOnDelete(false);
+
+		    modelBuilder.Entity<CustomerCategory>()
+			    .HasMany(s => s.Customers)
+			    .WithOptional(d => d.Category)
+			    .HasForeignKey(d => d.CategoryId).WillCascadeOnDelete(false);
 		}
 	}
 }

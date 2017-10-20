@@ -1,10 +1,48 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div align="center">
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Category</th>
+			<th>Price</th>
+			<th>Count</th>
+			<th>Updated</th>
+			<th>Should Refill</th>
+			<th>Status</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in items">
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.category.name}}</td>
+			<td>{{item.price}}</td>
+			<td>{{item.count}}</td>
+			<td>{{item.recordLastUpdated}}</td>
+			<td>{{item.shouldRefill}}</td>
+			<td>{{item.recordStatus}}</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="panel panel-default">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 align="center">Add Category</h3>
+				<form>
+					<label>Name</label>
+					<input class="form-control" type="text" ng-model="newItem.name"/>
+					<label>Category</label>
+					<select class="form-control" ng-model="newItem.CategoryId">
+						<option ng-repeat="category in itemCategories" value="{{category.id}}">{{category.name}}</option>
+					</select>
+					<label>Price</label>
+					<input class="form-control" type="text" ng-model="newItem.price" />
+					<label>Count</label>
+					<input class="form-control" type="text" ng-model="newItem.count" />
+					<button type="submit" class="btn btn-default" ng-click="addItem(newItem)"> Add </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

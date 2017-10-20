@@ -9,10 +9,9 @@ namespace WebShopKBS.Models.UserModels
     {
 	    public string Address { get; set; }
 	    public int BonusCredits { get; set; }
-	    public int CategoryId { get; set; }
+	    public int? CategoryId { get; set; }
 	    public List<Order> History { get; set; }
 
-		[ForeignKey("CategoryId")]
 	    public virtual CustomerCategory Category { get; set; }
 
 		public Customer()

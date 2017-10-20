@@ -1,6 +1,11 @@
 ﻿body,html{
 	height: 100%;
 }
+body {
+	padding-bottom: 20px;
+	background-color: #fafafa;
+	color: #5a4e55;
+}
 
 nav.sidebar, .main{
 	-webkit-transition: margin 200ms ease-out;
@@ -110,8 +115,8 @@ hr {
 
 .thumbnail {
 	text-align: center;
-	height: 120px;
-	width: 120px;
+	height: 200px;
+	width: 200px;
 	display: block;
 	max-width: 100%;
 	padding: 0;
@@ -130,4 +135,13 @@ hr {
 	color: #ffffff;
 	background-color: #dddddd;
 	border: 0;
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-radius: 0px;
 }

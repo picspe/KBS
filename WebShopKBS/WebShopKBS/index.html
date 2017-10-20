@@ -24,6 +24,17 @@
 					<li class="active"><a href="#">Home</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle" type="button" data-toggle="dropdown">Menu &nbsp;<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#!/manager/sales"> Sales </a></li>
+							<li><a href="#!/manager/items"> Items</a></li>
+							<li><a href="#!/manager/customerCategories"> Customer Categories </a></li>
+							<li><a href="#!/manager/itemCategories"> Item Categories </a></li>
+							<li><a href="#!/employee/orders"> Orders </a></li>
+							<li><a href="#!/employee/restock"> Restock </a></li>
+						</ul>
+					</li>
 					<li ng-if="user !== undefined || user.type === 0"><a href="#!/customer/profile"> Profile </a></li>
 					<li ng-if="user !== undefined"><a href="#!/" ng-click="logout(user)"> Logout </a></li>
 					<li ng-if="user === undefined"><a href="#!/register"> Register </a></li>
@@ -34,10 +45,8 @@
 	</nav>
 
 	<div class="container-fluid text-center">
-		<div class="row">
 			<div ui-view>
 			</div>
-		</div>
 	</div>
 
 	<!-- scripts-->

@@ -1,10 +1,39 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div align="center">
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Parent Name</th>
+			<th>Max Discount</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="category in itemCategories">
+			<td>{{category.id}}</td>
+			<td>{{category.name}}</td>
+			<td>{{category.parentCategory.name}}</td>
+			<td>{{category.maxDiscount}}</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="panel panel-default">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 align="center">Add Category</h3>
+				<form>
+					<label>Name</label>
+					<input class="form-control" type="text" ng-model="newItemCategory.name"/>
+					<label>Parent Category (optional) </label>
+					<select class="form-control" ng-model="newItemCategory.parentCategoryId">
+						<option value="none" selected="selected">None</option>
+						<option ng-repeat="category in itemCategories" value="{{category.id}}">{{category.name}}</option>
+					</select>
+					<label>Maximum possible discount</label>
+					<input class="form-control" type="text" ng-model="newItemCategory.maxDiscount" />
+					<button type="submit" class="btn btn-default" ng-click="addItemCategory(newItemCategory)"> Add </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

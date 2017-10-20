@@ -1,10 +1,31 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div>
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+		<tr>
+			<th>Date</th>
+			<th>Customer</th>
+			<th>Bill</th>
+			<th>Discount</th>
+			<th>Final Price</th>
+			<th>Status</th>
+			<th>Update</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="order in orders">
+				<td>{{order.dateTime}}</td>
+				<td>{{order.customerId}}</td>
+				<td>{{order.bill}}</td>
+				<td>{{order.totalDiscount}}</td>
+				<td>{{order.billAfterDiscount}}</td>
+				<td>
+					<select ng-model="order.orderStatus">
+						<option value="completed">Complete</option>
+						<option value="canceled">Cancel</option>
+					</select>
+				</td>
+				<td><button class="btn btn-default" ng-click="updateOrder(order)">Update</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

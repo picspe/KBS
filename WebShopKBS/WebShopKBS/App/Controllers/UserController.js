@@ -1,7 +1,7 @@
 ﻿angular.module('user.controllers', [])
 .controller('userController',
-['$scope', '$rootScope', '$window', '$state', 'userService', 'saleService', 'itemService','itemCategoryService', '$compile',
-function ($scope, $rootScope, $window, $state, userService, saleService, itemService, itemCategoryService, $compile) {
+['$scope', '$rootScope', '$window', '$state', 'userService', 'saleService', 'itemService','itemCategoryService', 'customerCategoryService',
+	function ($scope, $rootScope, $window, $state, userService, saleService, itemService, itemCategoryService, customerCategoryService) {
 	$scope.login = function (user) {
 		userService.login(user).then(function (response) {
 			$rootScope.user = response.data;
@@ -74,13 +74,16 @@ function ($scope, $rootScope, $window, $state, userService, saleService, itemSer
 		}, function() {
 			$rootScope.user = undefined;
 		});
+		customerCategoryService.getCustomerCategories().then(function (response) {
+			$rootScope.customerCategories = response.data;
+		});
 		itemCategoryService.getItemCategories().then(function (response) {
 			$rootScope.itemCategories = response.data;
 		});
-		itemService.getItem().then(function (response) {
+		itemService.getItems().then(function (response) {
 			$rootScope.items = response.data;
 		});
-		saleService.getSale().then(function (response) {
+		saleService.getSales().then(function (response) {
 			$rootScope.sales = response.data;
 		});
 	}

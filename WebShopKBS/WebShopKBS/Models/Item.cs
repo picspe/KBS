@@ -24,6 +24,11 @@ namespace WebShopKBS.Models
 	    [ForeignKey("CategoryId")]
 		public virtual ItemCategory Category { get; set; }
 
+	    public Item()
+	    {
+		    RecordLastUpdated = DateTime.Now;
+	    }
+
 		public void NotifyForRefill() { }
     }
 }
