@@ -37,6 +37,10 @@ namespace WebShopKBS.Services
 		{
 			order.Customer.History.Add(order);
 			order.Customer = null;
+			foreach (var orderItem in order.Items)
+			{
+				Rules.Rules.RunRestockRules(orderItem.Item);
+			}
 			return orders.Insert(order);
 		}
 

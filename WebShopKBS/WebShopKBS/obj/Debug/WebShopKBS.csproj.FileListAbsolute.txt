@@ -216,3 +216,5 @@ C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\bin\NRules.Fluent.pdb
 C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\bin\NRules.Fluent.xml
 C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\bin\NRules.RuleModel.pdb
 C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\bin\NRules.RuleModel.xml
+C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.Migrations.first.resources
+C:\Users\Srdjan\Documents\KBS\WebShopKBS\WebShopKBS\obj\Debug\WebShopKBS.csproj.GenerateResource.Cache

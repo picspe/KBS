@@ -145,6 +145,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EmbeddedResource Include="Migrations\201710230037343_first.resx">
+      <DependentUpon>201710230037343_first.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rules\DiscountRules.drl" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -164,6 +167,10 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710230037343_first.cs" />
+    <Compile Include="Migrations\201710230037343_first.Designer.cs">
+      <DependentUpon>201710230037343_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
