@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Web.SessionState;
 using WebShopKBS.Models;
 using WebShopKBS.Models.UserModels;
+using WebShopKBS.Rules;
 using WebShopKBS.Services;
 using WebShopKBS.UoW;
 

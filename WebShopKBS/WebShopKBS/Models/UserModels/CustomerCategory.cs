@@ -16,10 +16,9 @@ namespace WebShopKBS.Models.UserModels
 
 		public virtual ICollection<Customer> Customers { get; set; }
 
-		public float GetBonusTokens()
+		public int GetBonusCredits()
 		{
-			return 0;
+			return MinCapValue * 10 / 100;
 		}
-	
 	}
 }

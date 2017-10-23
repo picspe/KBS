@@ -2,12 +2,13 @@
 .controller('userController',
 ['$scope', '$rootScope', '$window', '$state', 'userService', 'saleService', 'itemService','itemCategoryService', 'customerCategoryService',
 	function ($scope, $rootScope, $window, $state, userService, saleService, itemService, itemCategoryService, customerCategoryService) {
-	$scope.login = function (user) {
+		$scope.login = function (user, type) {
+			user.type = type;
 		userService.login(user).then(function (response) {
 			$rootScope.user = response.data;
 			switch ($rootScope.user.type) {
 				case 0:
-					$state.go('customer');
+					$state.go('home');
 					break;
 				case 1:
 					$state.go('employee');
@@ -55,7 +56,7 @@
 		console.log(category);
 		category.subcategorieshtml = "<ul class='nav navbar-nav'>";
 		for (var i = 0; i < category.childCategories.length; i++) {
-			category.subcategorieshtml += "<li><a>" + category.childCategories[i].name;
+			category.subcategorieshtml += "<li><a ng-click='setCategoryFilter(category.childCategories[" + i + "].id)'>" + category.childCategories[i].name;
 			if (category.childCategories[i].childCategories.length > 0)
 				category.subcategorieshtml += "<span ng-click='getSubcategories(category.childCategories[" + i + "], $event)'" +
 					" style='font-size: 16px;' class='pull-right hidden-xs glyphicon glyphicon-plus-sign'></span>";
@@ -89,4 +90,16 @@
 	}
 
 	getContent();
+
+	$scope.setCategoryFilter = function (category) {
+		$scope.categoryFilter = category;
+	}
+
+	$scope.addToCart = function (item) {
+		item.count = 1;
+		userService.addToCart(item).then(function(response) {
+			alert('Added to cart.');
+			console.log(response.data);
+		});
+	}
 }])

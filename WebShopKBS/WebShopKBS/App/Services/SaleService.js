@@ -17,6 +17,6 @@
 	}
 
 	this.deleteSale = function (sale) {
-		return $http.delete('/sale', sale.id);
+		return $http.delete('/sale/' + sale.id);
 	}
 }]);

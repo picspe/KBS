@@ -38,8 +38,10 @@ namespace WebShopKBS.Services
 		{
 			foreach (var item in itemList)
 			{
-				//update record
-				//fire rules to update items
+				item.Count += item.MinCount - item.Count +10;
+				item.RecordLastUpdated = DateTime.Today;
+				item.RecordStatus = RecordStatus.Active;
+				items.Update(item);
 			}
 		}
 
@@ -47,11 +49,12 @@ namespace WebShopKBS.Services
 		//OBRADA PORUDZBINA - obradjuje se jedna po jedna (uvek se na serverside salje samo 1) i updejtuje se kupac o statusu porudzbine
 		public Order UpdateOrder(Order orderForUpdate)
 		{
+			foreach (var orderItem in orderForUpdate.Items)
+			{
+				Rules.Rules.RunRestockRules(orderItem.Item);
+			}
+			Rules.Rules.RunCreditsRules(orderForUpdate);
 			return orders.Update(orderForUpdate);
-			//proveri da li treba i kod customer.order da se updejtuje
-			//ovde opali pravila za restock
-			//maybe update customer category ???
-			//fire rules for awarding bonus credits
 		}
 
 

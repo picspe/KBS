@@ -21,8 +21,7 @@ namespace WebShopKBS.Controllers
 	    public CustomerController()
 	    {
 		    service = new CustomerService(new UnitOfWork());
-		    HttpContext.Current.Session["cart"] = new List<Item>();
-
+		   
 		}
 
 	    [HttpGet]
@@ -36,9 +35,10 @@ namespace WebShopKBS.Controllers
 
 	    [Route("order")]
 	    [HttpPost]
-	    public IHttpActionResult GetBill(Order order)
+	    public IHttpActionResult GetBill([FromBody] Order order)
 	    {
-		    var bill = service.GetBill(order);
+		    var bonusCreditsSpent = 0;
+		    var bill = service.GetBill(order, bonusCreditsSpent);
 		    if (bill == null)
 			    return BadRequest("Something went wrong with forming your bill, please try again later");
 		    return Ok(bill);
@@ -57,18 +57,36 @@ namespace WebShopKBS.Controllers
 	    [Route("cart")]
 	    public IHttpActionResult AddToCart(Item item)
 	    {
-		    var cart = HttpContext.Current.Session["cart"] as List<Item>;
-			if(cart != null)
-				cart.Add(item);
-			else
-			{
-				cart = new List<Item>();
-				cart.Add(item);
-			}
-		    HttpContext.Current.Session["cart"] = cart;
-		    return Ok(cart);
+		    if (HttpContext.Current.Session["cart"] == null)
+			    HttpContext.Current.Session["cart"] = new BillDTO();
+
+			(HttpContext.Current.Session["cart"] as BillDTO).Items.Add(item);
+
+			return Ok(HttpContext.Current.Session["cart"]);
 	    }
 
+	    [Route("cart")]
+		[HttpGet]
+	    public IHttpActionResult GetCart()
+	    {
+		    return Ok(HttpContext.Current.Session["cart"]);
+	    }
 
-	}
+	    [Route("removeFromCart")]
+	    [HttpPost]
+	    public IHttpActionResult RemoveFromCart(Item item)
+	    {
+		    var cart = (HttpContext.Current.Session["cart"] as BillDTO);
+		    Item itemToRemove = null;
+		    foreach (var cartItem in cart.Items)
+		    {
+			    if (item.Name.Equals(cartItem.Name))
+				    itemToRemove = cartItem;
+		    }
+		    cart.Items.Remove(itemToRemove);
+		    HttpContext.Current.Session["cart"] = cart;
+			return Ok(HttpContext.Current.Session["cart"]);
+
+	    }
+ 	}
 }

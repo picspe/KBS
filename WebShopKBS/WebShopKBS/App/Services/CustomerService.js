@@ -12,4 +12,12 @@
 	this.placeOrder = function(order) {
 		return $http.post('/customer/confirm', order);
 	}
+
+	this.getCart = function() {
+		return $http.get('/customer/cart');
+	}
+
+	this.removeFromCart = function(item) {
+		return $http.post('/customer/removeFromCart', item);
+	}
 }]);

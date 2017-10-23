@@ -7,6 +7,7 @@
 				<th>Starts</th>
 				<th>Ends</th>
 				<th>Discount</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,22 +17,26 @@
 				<td>{{sale.startsAt}}</td>
 				<td>{{sale.endsAt}}</td>
 				<td>{{sale.discount}}</td>
+				<td><button class="btn btn-default" ng-click="deleteSate(sale)"> Delete </button></td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="panel panel-default">
 		<div class="container-fluid">
 			<div class="row">
-				<h3 align="center">Add Category</h3>
+				<h3 align="center">Add Sale</h3>
 				<form>
 					<label>Name</label>
 					<input class="form-control" type="text" ng-model="newSale.name" />
 					<label>Start date</label>
-					<input class="form-control" type="datetime" ng-model="newSale.startsAt" />
+					<input class="form-control" type="date" ng-model="newSale.startsAt" />
 					<label>End date</label>
-					<input class="form-control" type="datetime" ng-model="newSale.endsAt" />
+					<input class="form-control" type="date" ng-model="newSale.endsAt" />
 					<label>Discount</label>
 					<input class="form-control" type="text" ng-model="newSale.discount" />
+					<select class="form-control" ng-model="newSale.itemCategory">
+						<option ng-repeat="category in itemCategories" value="{{category.id}}">{{category.name}}</option>
+					</select>
 					<button type="submit" class="btn btn-default" ng-click="addSale(newSale)"> Add </button>
 				</form>
 			</div>

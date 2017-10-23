@@ -17,7 +17,8 @@ namespace WebShopKBS.Models
 	    public int CategoryId { get; set; }
 	    public int Price { get; set; }
 	    public int Count { get; set; }
-	    public DateTime RecordLastUpdated { get; set; }
+		public int MinCount { get; set; }
+		public DateTime RecordLastUpdated { get; set; }
 		public bool ShouldRefill { get; set; }
 	    public RecordStatus RecordStatus { get; set; }
 
@@ -30,5 +31,10 @@ namespace WebShopKBS.Models
 	    }
 
 		public void NotifyForRefill() { }
+
+	    public void RequestRefill()
+	    {
+		    ShouldRefill = true;
+	    }
     }
 }

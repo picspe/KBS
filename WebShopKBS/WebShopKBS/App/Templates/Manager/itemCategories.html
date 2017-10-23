@@ -6,6 +6,7 @@
 			<th>Name</th>
 			<th>Parent Name</th>
 			<th>Max Discount</th>
+			<th>Delete</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -14,13 +15,14 @@
 			<td>{{category.name}}</td>
 			<td>{{category.parentCategory.name}}</td>
 			<td>{{category.maxDiscount}}</td>
+			<td><button class="btn btn-default" ng-click="deleteItemCategory(category)"> Delete </button></td>
 		</tr>
 		</tbody>
 	</table>
 	<div class="panel panel-default">
 		<div class="container-fluid">
 			<div class="row">
-				<h3 align="center">Add Category</h3>
+				<h3 align="center">Add Item Category</h3>
 				<form>
 					<label>Name</label>
 					<input class="form-control" type="text" ng-model="newItemCategory.name"/>

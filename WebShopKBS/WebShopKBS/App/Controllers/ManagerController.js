@@ -25,7 +25,7 @@
 		$scope.deleteCustomerCategory = function (category) {
 			customerCategoryService.deleteCustomerCategory(category).then(function (response) {
 				var index = $scope.customerCategories.indexOf(category);
-				$scope.customerCategories.splice(1, index);
+				$scope.customerCategories.splice(index, 1);
 			});
 		}
 
@@ -51,7 +51,7 @@
 		$scope.deleteItemCategory = function (category) {
 			itemCategoryService.deleteItemCategory(category).then(function (response) {
 				var index = $scope.itemCategories.indexOf(category);
-				$scope.itemCategories.splice(1, index);
+				$scope.itemCategories.splice(index, 1);
 			});
 		}
 
@@ -77,7 +77,7 @@
 		$scope.deleteItem = function (item) {
 			itemService.deleteItem(item).then(function (response) {
 				var index = $scope.items.indexOf(item);
-				$scope.items.splice(1, index);
+				$scope.items.splice(index, 1);
 			});
 		}
 

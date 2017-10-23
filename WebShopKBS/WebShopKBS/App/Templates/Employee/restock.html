@@ -23,7 +23,7 @@
 			<td>{{item.recordLastUpdated}}</td>
 			<td>{{item.shouldRefill}}</td>
 			<td>{{item.recordStatus}}</td>
-			<td><button class="btn btn-primary" ng-click="addToList(item)"> Add </button></td>
+			<td ng-if="item.shouldRefill"><button class="btn btn-primary" ng-click="addToList(item)"> Add </button></td>
 		</tr>
 		</tbody>
 	</table>

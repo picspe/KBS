@@ -4,7 +4,7 @@
 			<div class="nav navbar-nav">
 				<ul class="nav navbar-nav">
 					<li ng-repeat="category in itemCategories" ng-if="category.parentCategory === null">
-						<a>{{category.name}} 
+						<a ng-click="setCategoryFilter(category.id)">{{category.name}} 
 							<span ng-if="category.childCategories.length > 0" ng-click="getSubcategories(category, $event)" 
 							      style="font-size: 16px;" class="pull-right hidden-xs glyphicon glyphicon-plus-sign"></span>
 						</a>
@@ -15,11 +15,11 @@
 		</div>
 	</nav>
 	<div>
-		<div class="thumbnail col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="item in items">
+		<div class="thumbnail col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="item in items | filter: {categoryId: categoryFilter}">
 			<div class="caption">
 				<h3>{{item.name}}</h3>
 				<h4>{{item.price}}</h4>
-				<button type="button" class="btn btn-primary btn-block"> Add to cart </button>
+				<button type="button" class="btn btn-primary btn-block" ng-click="addToCart(item)"> Add to cart </button>
 			</div>
 		</div>
 	</div>

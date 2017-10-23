@@ -7,8 +7,11 @@
 			<label>Password</label>
 			<input type="password" required class="form-control" ng-model="user.password"/>
 			<hr/>
-			<button type="submit" class="btn-lg btn-primary " ng-click="login(user)">Login</button>
+			<button type="submit" class="btn-lg btn-primary " ng-click="login(user, 0)">Login</button>
 			<hr/>
+			<button type="submit" class="btn-lg btn-primary " ng-click="login(user, 1)">Login As Employee</button>
+			<hr />
+			<button type="submit" class="btn-lg btn-primary " ng-click="login(user, 2)">Login As Manager</button>
 		</form>
 	</div>
 </div>

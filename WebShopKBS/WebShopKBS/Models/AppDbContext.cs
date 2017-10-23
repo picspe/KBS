@@ -22,16 +22,9 @@ namespace WebShopKBS.Models
 		public virtual DbSet<Item> Items  { get; set; }
 	    public virtual DbSet<ItemCategory> ItemCategories  { get; set; }
 	    public virtual DbSet<Sale> Sales { get; set; }
-	    public virtual DbSet<Discount> Discounts{ get; set; }
 
 	    protected override void OnModelCreating(DbModelBuilder modelBuilder)
 	    {
-			//one-to-many  
-			/* modelBuilder.Entity<Order>()
-				 .HasRequired<Customer>(l => l.Customer)
-				 .WithMany(b => b.History)
-				 .HasForeignKey(l => l.Customer);*/
-
 		    modelBuilder.Entity<ItemCategory>()
 			    .HasMany(c => c.ChildCategories)
 			    .WithOptional(c => c.ParentCategory)
@@ -42,15 +35,20 @@ namespace WebShopKBS.Models
 			    .WithRequired(d => d.Order)
 			    .HasForeignKey(d => d.OrderId);
 
+		    modelBuilder.Entity<Customer>()
+			    .HasMany(s => s.History)
+			    .WithRequired(o => o.Customer)
+			    .HasForeignKey(o => o.CustomerId);
+
 			modelBuilder.Entity<OrderItem>()
 			    .HasMany(s => s.Discounts)
 			    .WithRequired(d => d.Item)
 			    .HasForeignKey(d => d.ItemId).WillCascadeOnDelete(false);
 
 		    modelBuilder.Entity<CustomerCategory>()
-			    .HasMany(s => s.Customers)
-			    .WithOptional(d => d.Category)
-			    .HasForeignKey(d => d.CategoryId).WillCascadeOnDelete(false);
+			    .HasMany(c => c.Customers)
+				.WithRequired(c => c.Category)
+				.HasForeignKey(c => c.CategoryId).WillCascadeOnDelete(false);
 		}
 	}
 }

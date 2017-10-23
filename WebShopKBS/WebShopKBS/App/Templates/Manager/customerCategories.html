@@ -6,6 +6,7 @@
 			<th>Name</th>
 			<th>Min Value</th>
 			<th>Max Value</th>
+			<th>Delete</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -14,13 +15,14 @@
 			<td>{{category.name}}</td>
 			<td>{{category.minCapValue}}</td>
 			<td>{{category.maxCapValue}}</td>
+			<td><button class="btn btn-default" ng-click="deleteCustomerCategory(newCategory)"> Delete </button></td>
 		</tr>
 		</tbody>
 	</table>
 	<div class="panel panel-default">
 		<div class="container-fluid">
 			<div class="row">
-				<h3 align="center">Add Category</h3>
+				<h3 align="center">Add Customer Category</h3>
 				<form>
 					<label>Name</label>
 					<input class="form-control" type="text" ng-model="newCategory.name"/>

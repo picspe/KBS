@@ -14,6 +14,6 @@
 	}
 
 	this.deleteItemCategory = function (category) {
-		return $http.delete('/itemCategory', category.id);
+		return $http.delete('/itemCategory/' + category.id);
 	}
 }]);

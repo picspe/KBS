@@ -20,10 +20,10 @@ namespace WebShopKBS.Models
 	    public int BillAfterDiscount { get; set; }
 	    public int BonusCreditSpent { get; set; }
 	    public OrderStatus OrderStatus { get; set; }
+	    public List<OrderDiscount> Discounts { get; set; }
 
 		[ForeignKey("CustomerId")]
 	    public virtual Customer Customer { get; set; }
-		public virtual List<OrderDiscount> Discounts { get; set; }
 	    public virtual List<OrderItem> Items { get; set; }
 
 	    public Order()
@@ -31,7 +31,24 @@ namespace WebShopKBS.Models
 			OrderStatus = OrderStatus.Ordered;
 			Discounts = new List<OrderDiscount>();
 		    Items = new List<OrderItem>();
+			DateTime = DateTime.Now;
 	    }
 
-    }
+
+	    public void AwardCredits()
+	    {
+		    Customer.BonusCredits += Customer.Category.GetBonusCredits();
+	    }
+
+	    public void CalculateFinalPrice()
+	    {
+		    int finalPrice = 0;
+		    foreach (var item in Items)
+		    {
+			    finalPrice += item.TotalPrice;
+		    }
+		    finalPrice = finalPrice * (100 - TotalDiscount) / 100;
+		    BillAfterDiscount = finalPrice;
+	    }
+	}
 }

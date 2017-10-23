@@ -12,5 +12,13 @@ namespace WebShopKBS.Models
 
 		[ForeignKey("ItemId")]
 		public virtual OrderItem Item { get; set; }
+
+		public ItemDiscount(int percentage, bool basic)
+		{
+			Percentage = percentage;
+			IsBasic = basic;
+		}
+
+
     }
 }

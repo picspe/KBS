@@ -7,5 +7,11 @@ namespace WebShopKBS.Models
 {
     public class OrderDiscount:Discount
     {
+	    public OrderDiscount(int percentage, bool basic)
+	    {
+		    Percentage = percentage;
+		    IsBasic = basic;
+	    }
+
     }
 }

@@ -1,8 +1,8 @@
 ﻿angular.module('webShopApp', ['ui.router', 'ngSanitize',
-	'customer.services', 'customer.controllers',
 	'employee.services', 'employee.controllers',
 	'manager.services', 'managerItem.services', 'managerItemCategory.services', 'customerCategory.services', 'manager.controllers', 
-	'user.services', 'user.controllers'])
+	'user.services', 'user.controllers',
+	'customer.services', 'customer.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
@@ -35,19 +35,19 @@
 		.state('customer.profile',
 		{
 			url: '/customer/profile',
-			templateUrl: 'app/Templates/index.html',
-			controller: 'customerController'
-		})
-		.state('customer.shop',
-		{
-			url: '/customer/shop',
-			templateUrl: 'app/Templates/index.html',
+			templateUrl: 'app/Templates/Customer/profile.html',
 			controller: 'customerController'
 		})
 		.state('customer.cart',
 		{
-			url: '/customer/cart',
-			templateUrl: 'app/Templates/index.html',
+			url: '/cart',
+			templateUrl: 'app/Templates/Customer/cart.html',
+			controller: 'customerController'
+		})
+		.state('customer.bill',
+		{
+			url: '/order',
+			templateUrl: 'app/Templates/Customer/order.html',
 			controller: 'customerController'
 		})
 		.state('employee',
@@ -58,13 +58,13 @@
 		})
 		.state('employee.updateOrder',
 		{
-			url: '/employee/updateOrder',
+			url: '/orders',
 			templateUrl: 'app/Templates/Employee/order.html',
 			controller: 'employeeController'
 		})
 		.state('employee.restock',
 		{
-			url: '/employee/restock',
+			url: '/restock',
 			templateUrl: 'app/Templates/Employee/restock.html',
 			controller: 'employeeController'
 		})

@@ -18,6 +18,6 @@
 	}
 
 	this.deleteItem = function (item) {
-		return $http.delete('/item', item.id);
+		return $http.delete('/item/' + item.id);
 	}
 }]);

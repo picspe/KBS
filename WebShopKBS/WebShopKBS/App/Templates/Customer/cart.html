@@ -1,0 +1,24 @@
+﻿<div>
+	<table class="table table-hover table-bordered table-responsive">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Discount</th>
+				<th>Count</th>
+				<th>Remove</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in cart.items">
+				<td>{{item.name}}</td>
+				<td>{{item.price}}</td>
+				<td>{{item.totalDiscount}}</td>
+				<td><input type="number" ng-model="item.count" value="0" /></td>
+				<td><button class="btn btn-default" ng-click="removeFromCart(item)">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn btn-primary" ng-click="getBill(100)">Get Bill</button>
+</div>

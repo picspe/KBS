@@ -16,4 +16,8 @@
 	this.isUserLoggedIn = function () {
 		return $http.get('/user/isUserLoggedIn');
 	}
+	
+	this.addToCart = function(item) {
+		return $http.post('/customer/cart', item);
+	}
 }]);

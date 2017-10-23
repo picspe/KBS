@@ -19,16 +19,28 @@ namespace WebShopKBS.Models
 	    public int TotalPrice { get; set; }
 	    public int TotalDiscount { get; set; }
 	    public int PriceAfterDiscount { get; set; }
+	    public List<ItemDiscount> Discounts { get; set; }
 
-	    [ForeignKey("OrderId")]
+		[ForeignKey("OrderId")]
 		public Order Order { get; set; }
 		[ForeignKey("ItemId")]
 	    public virtual Item Item { get; set; }
-		public virtual List<ItemDiscount> Discounts { get; set; }
 
 	    public OrderItem()
 	    {
 		    Discounts = new List<ItemDiscount>();
 	    }
+
+	    public int GetBestBasicDiscount()
+	    {
+		    int discount = 0;
+		    foreach (var itemDiscount in Discounts)
+		    {
+			    if (itemDiscount.IsBasic && itemDiscount.Percentage > discount)
+				    discount = itemDiscount.Percentage;
+		    }
+		    return discount;
+	    }
+
 	}
 }
